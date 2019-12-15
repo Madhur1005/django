@@ -1,0 +1,77 @@
+{% load crispy_forms_tags %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+    <title>Multiusers</title>
+    <style> 
+            /* CSS for Square boxes */ 
+            span { 
+                display: inline-block; 
+                width: 100%; 
+                height: auto; 
+                margin: 6px; 
+                background-color: #DCDCDC; 
+                padding: 20px 20px 20px 20px;
+            } 
+            .border{
+              margin: 20px;
+            }
+        </style> 
+</head>
+<body style="background-color: #eeeeee;">
+        <nav class="navbar navbar-expand-sm bg-dark navbar-dark border">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="home"> Home </a>
+                  </li>
+                </ul>
+              </nav>
+    <h1> </h1>
+    <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-8">
+                <h1 class="mt-2"></h1>
+                <h2>Hello, {{user.first_name}}</h2>
+                <h3>Your details are :</h3>
+                <hr class="mt-0 mb-4">
+                <span class="border border-dark">
+                    <form action="logout">  
+                    <div class="form-group">
+                        <table class="table table-bordered">
+                          <tbody>
+                            <tr>
+                              <th>First Name </th>
+                              <td> {{user.first_name}} </td>
+                            </tr>
+                            <tr>
+                                <th>Last Name </th>
+                                <td> {{user.last_name}} </td>
+                              </tr>
+                            <tr>
+                              <th>Username </th>
+                              <td> {{user.username}} </td>
+                            </tr>
+                            <tr>
+                              <th>Is Admin </th>
+                              <td> {{user.is_superuser}} </td>
+                            </tr>
+                            <tr>
+                              <th>Email Id </th>
+                              <td> {{user.email}} </td>
+                            </tr>
+                          </tbody>
+                        </table>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Logout</button>
+                    </form>
+                    </span>
+              </div>
+            </div>
+          </div>
+</body>
+</html>
